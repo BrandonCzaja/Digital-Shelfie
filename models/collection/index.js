@@ -11,7 +11,9 @@ const collectionSchema = new Schema({
   username: { type: String, required: true, unique: true },
   game: String,
   imageURL: String,
-});
+},
+{timestamps: true}
+);
 
 ////////////////////////////////////
 // CREATE MODEL
