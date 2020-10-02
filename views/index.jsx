@@ -4,7 +4,7 @@ const Layout = require("./layout.jsx");
 class Index extends React.Component {
   render() {
     return (
-      <Layout title="The Title!">
+      <Layout title="Your Collection!">
         <h1> {this.props.hello} </h1>
       </Layout>
     );
