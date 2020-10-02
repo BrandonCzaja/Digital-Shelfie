@@ -15,7 +15,7 @@ const router = Router();
 ///////////////////////////////////////
 
 // Index Route
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
   try {
     const games = await Collection.find({username: req.session.username});
     res.render('collection/index.jsx', {games});

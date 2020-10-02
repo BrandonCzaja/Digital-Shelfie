@@ -3,9 +3,11 @@ const Layout = require("./layout.jsx");
 
 class Index extends React.Component {
   render() {
+    const {games} = this.props;
     return (
-      <Layout title="The Title">
-        <h1> {this.props.hello} </h1>
+      <Layout title="My Collection!">
+        <h1> My Notes </h1>
+        {games.map(game => <h2>{game.game}</h2>)}
       </Layout>
     );
   }
