@@ -9,8 +9,8 @@ const { Schema, model } = require("mongoose");
 
 const collectionSchema = new Schema({
   username: { type: String, required: true},
-  games: {type:String, unique:true},
-  imageURL: String,
+  game: {type:String, unique: true, sparse:true, required:false},
+  imageURL: {type:String, unique: true, sparse:true, required:false},
 },
 {timestamps: true}
 );
@@ -18,7 +18,7 @@ const collectionSchema = new Schema({
 ////////////////////////////////////
 // CREATE MODEL
 ////////////////////////////////////
-const Collection = model("collection", collectionSchema);
+const Collection = model("collections", collectionSchema);
 
 ////////////////////////////////////
 // EXPORT MODEL
