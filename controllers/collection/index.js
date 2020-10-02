@@ -32,11 +32,6 @@ router.get('/new', auth, (req, res) => {
 //Create Route: I think I need a try/catch
 router.post('/', auth, async (req, res) => {
   try{
-    // I don't get any errors with this but nothing renders
-    // Collection.create(req.body, (error, games) => {
-    //   res.redirect('/collection');
-    // })
-    //I always get a Mongo Error 11000 with this
   req.body.username = req.session.username;
   console.log(`Create Route Req.Body : ${req.body}`)
   const newGame = await Collection.create(req.body);

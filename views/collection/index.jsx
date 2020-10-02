@@ -9,7 +9,7 @@ class Index extends React.Component {
         <h1> Your Games </h1>
        <a href="/collection/new"><button> New Game</button></a>
        {/* The <h2> might have to be games.games if it doesn't show up  */}
-        {games.map(games => <h2 key={index}>{games.games}</h2>)}
+        {games.map(game => <h2 key={index}>{game.game}</h2>)}
       </Layout>
     );
   }

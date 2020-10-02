@@ -1,7 +1,7 @@
 const React = require("react");
 const Layout = require("../layout.jsx");
 
-class Index extends React.Component {
+class New extends React.Component {
   render() {
     const {games} = this.props;
     return (
@@ -17,4 +17,4 @@ class Index extends React.Component {
   }
 }
 
-module.exports = Index;
+module.exports = New;
