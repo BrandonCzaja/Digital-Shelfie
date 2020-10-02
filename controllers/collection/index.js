@@ -40,6 +40,8 @@ router.post('/', auth, async (req, res) => {
   req.body.username = req.session.username;
   console.log(`Create Route Req.Body : ${req.body}`)
   const newGame = await Collection.create(req.body);
+  console.log(`Create Route req.body: ${req.body}`)
+  
   res.redirect('/collection');
   } catch(err) {
     console.log(err);

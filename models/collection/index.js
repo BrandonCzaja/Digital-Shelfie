@@ -9,8 +9,8 @@ const { Schema, model } = require("mongoose");
 
 const collectionSchema = new Schema({
   username: { type: String, required: true},
-  game: {type:String, unique: true, sparse:true, required:false},
-  imageURL: {type:String, unique: true, sparse:true, required:false},
+  game: {type:String, required:false},
+  imageURL: {type:String, unique: true,  required:false},
 },
 {timestamps: true}
 );
