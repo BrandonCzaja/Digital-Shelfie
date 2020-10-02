@@ -12,7 +12,12 @@ class Layout extends React.Component {
         </head>
         <body>
           <header>
-            <h1>Board Game Collection</h1>
+            <h1>Board Game Collection
+            <nav>
+              <span><a href="/auth/signup">| Sign Up |</a></span>
+              <span><a href="/auth/login"> Login |</a></span>
+            </nav>
+            </h1>
           </header>
           <main>{this.props.children}</main>
           <footer>
