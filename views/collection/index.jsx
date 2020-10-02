@@ -6,7 +6,8 @@ class Index extends React.Component {
     const {games} = this.props;
     return (
       <Layout title="My Collection!">
-        <h1> My Notes </h1>
+        <h1> My Games </h1>
+        <a href="/collection/new"><button>New Game</button></a>
         {games.map(game => <h2>{game.game}</h2>)}
       </Layout>
     );

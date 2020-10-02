@@ -24,6 +24,19 @@ router.get('/', auth, async (req, res) => {
   }
 })
 
+// New Route
+router.get('/new', auth, (req, res) => {
+  res.render('collection/new.jsx')
+})
+
+//Create Route
+router.post('/', auth, async (req, res) => {
+  req.body.username = req.session.username;
+  const newGame = await Collection.create(req.body);
+  res.send('/collection');
+})
+
+
 //TEST ROUTE TO SHOW HOW AUTH MIDDLEWARE WORKS
 
 router.get("/", auth, (req, res) => {
