@@ -1,5 +1,5 @@
 const React = require("react");
-const Layout = require("./layout.jsx");
+const Layout = require("../layout.jsx");
 
 class Index extends React.Component {
   render() {
