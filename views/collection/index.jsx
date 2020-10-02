@@ -8,7 +8,8 @@ class Index extends React.Component {
       <Layout title="My Collection!">
         <h1> My Games </h1>
         <a href="/collection/new"><button>New Game</button></a>
-        {games.map(game => <h2>{game.game}</h2>)}
+        {games.map(games => <h2>{games}</h2>)}
+        {console.log(`Games : ${games}`)}
       </Layout>
     );
   }

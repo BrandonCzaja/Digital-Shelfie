@@ -38,7 +38,7 @@ router.get("/login", (req, res) => {
 router.post("/login", async (req, res) => {
   // FIND USER
   const user = await User.find({ username: req.body.username });
-
+  console.log(`Login Post Route req.body.username: ${req.body.username}`);
   //CHECK IF USER WAS FOUND
   if (user.length > 0) {
     // COMPARE PASSWORD
@@ -48,7 +48,7 @@ router.post("/login", async (req, res) => {
       req.session.login = true;
       req.session.username = user[0].username;
       console.log(`Req.Session.Username : ${req.session.username}`);
-      res.redirect("/collection/");
+      res.redirect("/");
     } else {
       // Redirect to login page if failed
       res.render("auth/fail.jsx");
