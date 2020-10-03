@@ -6,7 +6,7 @@ class Index extends React.Component {
     const {games, index} = this.props;
     return(
       <Layout title="My Collection">       
-        <span className='indexHeader'><h1> Your Games </h1></span>
+        <span><h1> Your Games </h1></span>
         <a href="/collection/new">
           <button> New Game</button>
         </a>

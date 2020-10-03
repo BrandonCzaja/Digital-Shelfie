@@ -1,3 +1,53 @@
+// const Axios = require('axios');
+
+// class App extends Component {
+//     state = {
+//         name: [],
+//         image: [],
+//     }
+
+//     componentDidMount(){
+//         Axios
+//             .get(`https://api.boardgameatlas.com/api/search?name=${searchTerms}&client_id=7icEeQwWLb`)
+//             .then(res => {
+//                 const newGame = response.data.map(game => {
+//                     return {
+//                         name: game.name,
+//                         image: game.
+//                     }
+//                 })
+//             })
+//     }
+
+
+// } 
+
+// module.exports = App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // let $ = require('jQuery');
 
 // const BoardGameAtlas = 
