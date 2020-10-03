@@ -11,9 +11,9 @@ class Index extends React.Component {
           <button> New Game</button>
         </a>
         {games.map((game) => (
-          <div>    
+          <div className='container'>    
             <h2 className= 'container' key={index}>{game.game}</h2>
-            <img src={game.imageURL}/>
+            <img className='gameImages' src={game.imageURL}/>
             <form action={`/collection/${game._id}?_method=DELETE`} method='POST'>
               <input type="submit" value="Delete"/>
             </form>

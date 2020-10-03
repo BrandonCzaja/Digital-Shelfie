@@ -1,18 +1,29 @@
+* {
+    font-size: larger;
+}
+
+body {
+    background-image: url('../bookcase.png');
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
 header {
-    color: teal;
     text-align: right;
     margin-right: 5%;
+    margin-top: 5%;
+    color: white;
 }
 
 main {
     text-align: left;
     margin-left: 5%;
+    color: white;
 }
 
 .indexHeader {
     text-align: center;
 }
-
 
 
 img {
@@ -22,8 +33,9 @@ img {
 
 .container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    color: blue;
-    position: relative;
+    padding: 2%
+}
+
+.gameImages {
+    margin-bottom: -2%;
 }
