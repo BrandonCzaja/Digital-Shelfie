@@ -26,7 +26,13 @@ router.get('/', auth, async (req, res) => {
 
 // New Route
 router.get('/new', auth, (req, res) => {
-  res.render('collection/new.jsx')
+  try {
+    res.render('collection/new.jsx')
+  }
+  catch(error) {
+    console.log(error)
+  }
+  
 })
 
 //Create Route: I think I need a try/catch
@@ -44,14 +50,39 @@ router.post('/', auth, async (req, res) => {
 
 //Delete
 router.delete('/:id', auth, async (req, res) => {
-  await Collection.findByIdAndDelete(req.params.id);
-  res.redirect('/collection')
+  try {
+    await Collection.findByIdAndDelete(req.params.id);
+    res.redirect('/collection')
+  }
+  catch(error) {
+    console.log(error)
+  }
 })
 
 
+//Edit
+router.get('/edit/:id', auth, async (req, res) => {
+  try {
+    const game = await Collection.findById(req.params.id);
+    res.render('collection/edit.jsx', {game})
+  }
+  catch(error) {
+    console.log(error)
+  }
+
+})
 
 
-
+//Update
+router.put('/edit/:id', auth, async (req, res) => {
+  try {
+  req.body.username = req.session.username;
+  await Collection.findByIdAndUpdate(req.params.id, req.body);
+  res.redirect('/collection')
+  } catch(err) {
+    console.log(err);
+  }
+})
 
 
 //TEST ROUTE TO SHOW HOW AUTH MIDDLEWARE WORKS
