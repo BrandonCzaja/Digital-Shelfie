@@ -1,8 +1,29 @@
 header {
     color: teal;
-    text-align: center;
+    text-align: right;
+    margin-right: 5%;
 }
 
 main {
+    text-align: left;
+    margin-left: 5%;
+}
+
+.indexHeader {
     text-align: center;
+}
+
+
+
+img {
+    max-height: 10%;
+    max-width: 10%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: blue;
+    position: relative;
 }

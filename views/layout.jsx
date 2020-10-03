@@ -22,7 +22,7 @@ class Layout extends React.Component {
             </nav>
 
           </header>
-          <main>{this.props.children}</main>
+            <main>{this.props.children}</main>
           <footer>
           </footer>
         </body>

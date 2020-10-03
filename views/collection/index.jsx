@@ -6,13 +6,14 @@ class Index extends React.Component {
     const {games, index} = this.props;
     return(
       <Layout title="My Collection">       
-        <h1> Your Games </h1>
+        <span className='indexHeader'><h1> Your Games </h1></span>
         <a href="/collection/new">
           <button> New Game</button>
         </a>
         {games.map((game) => (
           <div>    
-            <h2 key={index}>{game.game}</h2>
+            <h2 className= 'container' key={index}>{game.game}</h2>
+            <img src={game.imageURL}/>
             <form action={`/collection/${game._id}?_method=DELETE`} method='POST'>
               <input type="submit" value="Delete"/>
             </form>
