@@ -42,6 +42,17 @@ router.post('/', auth, async (req, res) => {
   }
 })
 
+//Delete
+router.delete('/:id', auth, async (req, res) => {
+  await Collection.findByIdAndDelete(req.params.id);
+  res.redirect('/collection')
+})
+
+
+
+
+
+
 
 //TEST ROUTE TO SHOW HOW AUTH MIDDLEWARE WORKS
 

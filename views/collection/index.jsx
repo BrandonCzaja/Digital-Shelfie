@@ -2,16 +2,24 @@ const React = require("react");
 const Layout = require("../layout.jsx");
 
 class Index extends React.Component {
-  render() {
+  render(){
     const {games, index} = this.props;
-    return (
-      <Layout title="My Collection!">
+    return(
+      <Layout title="My Collection">       
         <h1> Your Games </h1>
-       <a href="/collection/new"><button> New Game</button></a>
-       {/* The <h2> might have to be games.games if it doesn't show up  */}
-        {games.map(game => <h2 key={index}>{game.game}</h2>)}
+        <a href="/collection/new">
+          <button> New Game</button>
+        </a>
+        {games.map((game) => (
+          <div>    
+            <h2 key={index}>{game.game}</h2>
+            <form action={`/collection/${game._id}?_method=DELETE`} method='POST'>
+              <input type="submit" value="Delete"/>
+            </form>
+        </div> 
+        ))}  
       </Layout>
-    );
+    )
   }
 }
 
