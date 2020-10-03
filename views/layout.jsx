@@ -13,7 +13,7 @@ class Layout extends React.Component {
           <header>
             <h1>Digital Shelfie</h1>
             <nav> 
-              <h2>
+              <h2>              
               <span><a href="/auth/signup">| Sign Up |</a></span>
               <span><a href="/auth/login"> Login |</a></span>
               <span><a href="/auth/logout"> Logout |</a></span>
