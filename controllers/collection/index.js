@@ -3,7 +3,7 @@
 /////////////////////////////////
 const { Router } = require("express");
 const auth = require("../authmiddleware");
-const Collection = require('../../models/collection');
+const Collection = require("../../models/collection");
 
 ///////////////////////////////////////
 // CREATE ROUTER
@@ -15,75 +15,67 @@ const router = Router();
 ///////////////////////////////////////
 
 // Index Route
-router.get('/', auth, async (req, res) => {
+router.get("/", auth, async (req, res) => {
   try {
-    const games = await Collection.find({username: req.session.username});
-    res.render('collection/index.jsx', {games});
-  } catch(err) {
+    const games = await Collection.find({ username: req.session.username });
+    res.render("collection/index.jsx", { games });
+  } catch (err) {
     console.log(err);
   }
-})
+});
 
 // New Route
-router.get('/new', auth, (req, res) => {
+router.get("/new", auth, (req, res) => {
   try {
-    res.render('collection/new.jsx')
+    res.render("collection/new.jsx");
+  } catch (error) {
+    console.log(error);
   }
-  catch(error) {
-    console.log(error)
-  }
-  
-})
+});
 
-//Create Route: I think I need a try/catch
-router.post('/', auth, async (req, res) => {
-  try{
-  req.body.username = req.session.username;
-  console.log(`Create Route Req.Body : ${req.body}`)
-  const newGame = await Collection.create(req.body);
-  console.log(`Create Route req.body: ${req.body}`)
-  res.redirect('/collection');
-  } catch(err) {
+//Create
+router.post("/", auth, async (req, res) => {
+  try {
+    req.body.username = req.session.username;
+    console.log(`Create Route Req.Body : ${req.body}`);
+    const newGame = await Collection.create(req.body);
+    console.log(`Create Route req.body: ${req.body}`);
+    res.redirect("/collection");
+  } catch (err) {
     console.log(err);
   }
-})
+});
 
 //Delete
-router.delete('/:id', auth, async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
   try {
     await Collection.findByIdAndDelete(req.params.id);
-    res.redirect('/collection')
+    res.redirect("/collection");
+  } catch (error) {
+    console.log(error);
   }
-  catch(error) {
-    console.log(error)
-  }
-})
-
+});
 
 //Edit
-router.get('/edit/:id', auth, async (req, res) => {
+router.get("/edit/:id", auth, async (req, res) => {
   try {
     const game = await Collection.findById(req.params.id);
-    res.render('collection/edit.jsx', {game})
+    res.render("collection/edit.jsx", { game });
+  } catch (error) {
+    console.log(error);
   }
-  catch(error) {
-    console.log(error)
-  }
-
-})
-
+});
 
 //Update
-router.put('/edit/:id', auth, async (req, res) => {
+router.put("/edit/:id", auth, async (req, res) => {
   try {
-  req.body.username = req.session.username;
-  await Collection.findByIdAndUpdate(req.params.id, req.body);
-  res.redirect('/collection')
-  } catch(err) {
+    req.body.username = req.session.username;
+    await Collection.findByIdAndUpdate(req.params.id, req.body);
+    res.redirect("/collection");
+  } catch (err) {
     console.log(err);
   }
-})
-
+});
 
 //TEST ROUTE TO SHOW HOW AUTH MIDDLEWARE WORKS
 
