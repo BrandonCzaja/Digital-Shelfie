@@ -7,7 +7,7 @@ class Index extends React.Component {
       <Layout title="SIGNUP">
         <form action="/auth/signup" method="post">
           <input type="text" name="username" placeholder="username" />
-          <input type="text" name="password" placeholder="password" />
+          <input type="password" name="password" placeholder="password" />
           <input type="submit" value="signup" />
         </form>
       </Layout>
