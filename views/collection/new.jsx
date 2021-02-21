@@ -1,10 +1,17 @@
-//ORIGINAL- KEEP
 const React = require("react");
 const Layout = require("../layout.jsx");
+// const Form = require("../collection/form");
 
 class New extends React.Component {
     render() {
-        const { games } = this.props;
+        // const searchTerm = `https://api.boardgameatlas.com/api/search?name=${name}&client_id=7icEeQwWLb`;
+
+        // const handleChange = (event) => {};
+
+        // const handleSubmit = (event) => {
+        //     //   Ajax call
+        // };
+
         return (
             <Layout title="New Game!">
                 <h1> Add A New Game </h1>
@@ -15,10 +22,7 @@ class New extends React.Component {
                 </form>
 
                 <h1>Search Games</h1>
-                <form>
-                    <input type="text" placeholder="Search" />
-                    <input type="submit" value="Submit" />
-                </form>
+                {/* <Form /> */}
             </Layout>
         );
     }
