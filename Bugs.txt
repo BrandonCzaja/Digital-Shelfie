@@ -1,0 +1,6 @@
+Things to fix
+    - Sometimes when I log in I get an error saying I'm not logged in
+    - Remove Auth header from Layout.jsx and make it dynamic with ternary operator
+
+Improvements
+    - Break everything down to individual Components

@@ -1,32 +1,33 @@
-const React = require("react");
+import React, { Component } from "react";
 
-function API() {
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setitems] = useState([]);
+class API extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            items: [],
+            isLoaded: false,
+        };
+    }
 
-    // Remember to remove API Key
-    usEffect(() => {
+    componentDidMount() {
         fetch("https://api.boardgameatlas.com/api/search?name=Catan&client_id=7icEeQwWLb")
             .then((res) => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setitems(result);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            );
-    }, []);
+            .then((json) => {
+                this.setState({
+                    isLoaded: true,
+                    items: json,
+                });
+            });
+    }
 
-    if (error) {
-        return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-        return <div>Loading...</div>;
-    } else {
-        return <p>{items.name}</p>
-        <img src={items.images.thumb}
+    render() {
+        let { isLoaded, items } = this.state;
+        if (!isLoaded) {
+            return <div>Loading...</div>;
+        } else {
+            return <div className="API">Data loaded</div>;
+        }
     }
 }
+
+export default API;
