@@ -1,29 +1,57 @@
-const React = require("react");
+import React, { useState } from "react";
 
 // Remember, props are the attributes of the form
-class Form extends React.Component {
-    render() {
-        const [formData, setFormData] = React.useState();
 
-        const handleChange = (event) => {
-            setFormData({ ...formData, [event.target.name]: event.target.value });
-        };
+const Form = (props) => {
+	const [formData, setFormData] = useState({
+		name: "",
+	});
 
-        const handleSubmit = (event) => {
-            event.preventDefault();
-            props.handleSubmit(formData);
-        };
+	const handleChange = (event) => {
+		setFormData({
+			...formData,
+			[event.target.name]: event.target.value,
+		});
+	};
 
-        return (
-            <>
-                <form onSubmit={handleSubmit}>
-                    <label>Name:</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} />
-                </form>
-                <input type="submit" value="Search" />
-            </>
-        );
-    }
-}
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		console.log(formData);
+	};
 
-module.exports = Form;
+	return (
+		<form onSubmit={handleSubmit}>
+			<input type="text" name="name" value={formData.name} onChange={handleChange} />
+			<input type="submit" value="submit" />
+		</form>
+	);
+};
+
+export default Form;
+
+// class Form extends React.Component {
+//     render() {
+//         const [formData, setFormData] = React.useState();
+
+//         const handleChange = (event) => {
+//             setFormData({ ...formData, [event.target.name]: event.target.value });
+//         };
+
+//         const handleSubmit = (event) => {
+//             event.preventDefault();
+//             props.handleSubmit(formData);
+//         };
+
+//         return (
+//             <>
+//                 <form onSubmit={handleSubmit}>
+//                     <label>Name:</label>
+//                     <input type="text" name="name" value={formData.name} onChange={handleChange} />
+//                 </form>
+//                 <input type="submit" value="Search" />
+//             </>
+//         );
+//     }
+// }
+
+// module.exports = Form;
