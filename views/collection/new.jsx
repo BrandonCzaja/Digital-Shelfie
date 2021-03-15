@@ -5,9 +5,9 @@ import Form from "./Form.jsx";
 
 const New = () => {
 	return (
-		<Layout title="New Game!">
+		<Layout title="New Game">
 			<h1>Add Your Game</h1>
-			<Form name="name" />
+			<Form />
 		</Layout>
 	);
 };
