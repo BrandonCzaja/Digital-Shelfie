@@ -1,1 +1,0 @@
-`https://api.boardgameatlas.com/api/search?name=${searchTerms}&client_id=7icEeQwWLb`

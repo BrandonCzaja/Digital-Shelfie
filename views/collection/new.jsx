@@ -1,6 +1,5 @@
 const React = require("react");
 const Layout = require("../Layout.jsx");
-const API = require("./API.jsx");
 import Form from "./Form.jsx";
 
 const New = () => {
