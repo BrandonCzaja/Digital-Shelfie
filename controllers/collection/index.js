@@ -18,7 +18,7 @@ const router = Router();
 router.get("/", auth, async (req, res) => {
 	try {
 		const games = await Collection.find({ username: req.session.username });
-		res.render("collection/index.jsx", { games });
+		res.render("collection/Index.jsx", { games });
 	} catch (err) {
 		console.log(err);
 	}

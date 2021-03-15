@@ -1,7 +1,7 @@
-const React = require("react");
-const Layout = require("./Layout.jsx");
+import React from "react";
+import Layout from "./Layout.jsx";
 
-const Index = (props) => {
+const Landing = (props) => {
 	const greeting = props.hello;
 	return (
 		<Layout title="Welcome Page">
@@ -10,7 +10,7 @@ const Index = (props) => {
 	);
 };
 
-export default Index;
+export default Landing;
 
 /*
 Notes:

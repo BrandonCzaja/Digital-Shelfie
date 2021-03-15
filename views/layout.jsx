@@ -1,4 +1,4 @@
-const React = require("react");
+import React from "react";
 
 class Layout extends React.Component {
 	render() {
@@ -7,7 +7,7 @@ class Layout extends React.Component {
 				<head>
 					<title>{this.props.title}</title>
 					<link rel="stylesheet" href="/css/style.css" />
-					<script src="/js/app.js"></script>
+					{/* <script src="/js/app.js"></script> */}
 				</head>
 				<body>
 					<header>
