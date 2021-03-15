@@ -21,7 +21,7 @@ const Form = (props) => {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<input type="text" name="name" value={formData.name} onChange={handleChange} />
+			<input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Game" />
 			<input type="submit" value="submit" />
 		</form>
 	);
