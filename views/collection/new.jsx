@@ -1,12 +1,14 @@
 const React = require("react");
 const Layout = require("../Layout.jsx");
 import Form from "./Form.jsx";
+import API from "./API.jsx";
 
 const New = () => {
 	return (
 		<Layout title="New Game">
 			<h1>Add Your Game</h1>
-			<Form />
+			{/* <Form /> */}
+			<API action="/collection" method="post" />
 		</Layout>
 	);
 };

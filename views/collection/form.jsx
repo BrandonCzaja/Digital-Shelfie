@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import API from "./API.jsx";
 
 // Remember, props are the attributes of the form
-// The form state is not created in the form component
+// The Form works with manual submission
 
 const Form = (props) => {
 	//////////////
@@ -28,11 +29,14 @@ const Form = (props) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} action="/collection/" method="post">
-			<input type="text" name="game" value={formData.name} onChange={handleChange} placeholder="Game" />
-			<input type="text" name="imageURL" placeholder="Image" onChange={handleChange} />
-			<input type="submit" value="submit" />
-		</form>
+		<>
+			<API />
+			<form onSubmit={handleSubmit} action="/collection/" method="post">
+				<input type="text" name="game" value={formData.name} onChange={handleChange} placeholder="Game" />
+				<input type="text" name="imageURL" placeholder="Image" onChange={handleChange} />
+				<input type="submit" value="submit" />
+			</form>
+		</>
 	);
 };
 

@@ -35,8 +35,3 @@ class Index extends React.Component {
 }
 
 module.exports = Index;
-
-/*
-Notes:
-This page is rendering correctly and I can have additional content render if I add it within Layout
-*/
