@@ -8,7 +8,7 @@ const Collection = require("../../models/collection");
 ///////////////////////////////////////
 // CREATE ROUTER
 ///////////////////////////////////////
-const router = Router();
+const collection = Router();
 
 ///////////////////////////////////////
 // ROUTES
@@ -19,7 +19,7 @@ const router = Router();
 // 	res.render('auth/login.jsx')
 // })
 // Index Route '3000/collection' - when user logged in it shows their games
-router.get("/", auth, async (req, res) => {
+collection.get("/", auth, async (req, res) => {
 	try {
 		const games = await Collection.find({ username: req.session.username });
 		res.render("collection/Index.jsx", { games });
@@ -29,7 +29,7 @@ router.get("/", auth, async (req, res) => {
 });
 
 // New Route
-router.get("/new", auth, (req, res) => {
+collection.get("/new", auth, (req, res) => {
 	try {
 		res.render("collection/New.jsx");
 	} catch (error) {
@@ -38,7 +38,7 @@ router.get("/new", auth, (req, res) => {
 });
 
 //Create
-router.post("/", auth, async (req, res) => {
+collection.post("/", auth, async (req, res) => {
 	try {
 		req.body.username = req.session.username;
 		const newGame = await Collection.create(req.body);
@@ -49,7 +49,7 @@ router.post("/", auth, async (req, res) => {
 });
 
 //Delete
-router.delete("/:id", auth, async (req, res) => {
+collection.delete("/:id", auth, async (req, res) => {
 	try {
 		await Collection.findByIdAndDelete(req.params.id);
 		res.redirect("/collection");
@@ -59,7 +59,7 @@ router.delete("/:id", auth, async (req, res) => {
 });
 
 //Edit
-router.get("/edit/:id", auth, async (req, res) => {
+collection.get("/edit/:id", auth, async (req, res) => {
 	try {
 		const game = await Collection.findById(req.params.id);
 		res.render("collection/edit.jsx", { game });
@@ -69,7 +69,7 @@ router.get("/edit/:id", auth, async (req, res) => {
 });
 
 //Update
-router.put("/edit/:id", auth, async (req, res) => {
+collection.put("/edit/:id", auth, async (req, res) => {
 	try {
 		req.body.username = req.session.username;
 		await Collection.findByIdAndUpdate(req.params.id, req.body);
@@ -81,11 +81,11 @@ router.put("/edit/:id", auth, async (req, res) => {
 
 //TEST ROUTE TO SHOW HOW AUTH MIDDLEWARE WORKS
 
-// router.get("/", auth, (req, res) => {
+// collection.get("/", auth, (req, res) => {
 // 	res.send("if you see this you are logged in");
 // });
 
 ///////////////////////////////////////
-// Export Router
+// Export collection
 ///////////////////////////////////////
-module.exports = router;
+module.exports = collection;

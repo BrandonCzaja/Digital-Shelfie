@@ -7,7 +7,6 @@ class Layout extends React.Component {
 				<head>
 					<title>{this.props.title}</title>
 					<link rel="stylesheet" href="/css/style.css" />
-					<script src="/js/app.js"></script> {/*Not sure if this is actually needed, Added it from commit 1ed1f765169b9bb8e8a9949547fce939036195cb  */}
 				</head>
 				<body>
 					<header>

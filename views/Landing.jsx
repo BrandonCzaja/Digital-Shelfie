@@ -5,6 +5,7 @@ const Layout = require('./Layout.jsx')
 class Landing extends React.Component{
 	
 	render() {
+		console.log('Hello from Landing')
 		const greeting = this.props.hello
 		return (
 			<Layout title="Welcome Page">

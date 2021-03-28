@@ -18,7 +18,7 @@ const mongoose = require("./db/dbconn");
 
 // ROUTERS
 const authRouter = require("./controllers/auth");
-const testRouter = require("./controllers/test");
+// const testRouter = require("./controllers/test");
 const collectionRouter = require("./controllers/collection");
 
 // OTHER IMPORTS
@@ -57,10 +57,12 @@ app.use(morgan("tiny")); //logging
 //Routes and Routers
 //////////////
 
+// If I change the route it works, so something is blocking the '/' route
 // This doesn't actually do anything
-// app.get("/", (req, res) => {
-// 	res.render("auth/login.jsx");
-// });
+app.get("/", (req, res) => {
+	console.log('Hello World')
+	res.send('Hello World')
+});
 
 // Must have for auth to work
 app.use("/auth", authRouter);
