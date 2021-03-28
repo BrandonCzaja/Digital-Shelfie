@@ -16,11 +16,6 @@ const app = express();
 // IMPORT DATABASE CONNECTIONS
 const mongoose = require("./db/dbconn");
 
-// ROUTERS
-const authRouter = require("./controllers/auth");
-// const testRouter = require("./controllers/test");
-const collectionRouter = require("./controllers/collection");
-
 // OTHER IMPORTS
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
@@ -57,11 +52,18 @@ app.use(morgan("tiny")); //logging
 //Routes and Routers
 //////////////
 
+
+// ROUTERS
+const authRouter = require("./controllers/auth");
+// const testRouter = require("./controllers/test");
+const collectionRouter = require("./controllers/collection");
+
+
 // This now works. It will render whatever page I tell it to.
-// This is my default root route
+// This is my default root route. Doesn't render landing page outside of local
 app.get("/", (req, res) => {
 	// console.log('Hello Cheese')
-	res.render('landing.jsx')
+	res.render('auth/login')
 });
 
 // Must have for auth to work
