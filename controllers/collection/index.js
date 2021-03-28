@@ -21,6 +21,7 @@ const collection = Router();
 // Index Route '3000/collection' - when user logged in it shows their games
 collection.get("/", auth, async (req, res) => {
 	try {
+		console.log('Hello from collection')
 		const games = await Collection.find({ username: req.session.username });
 		res.render("collection/Index.jsx", { games });
 	} catch (err) {

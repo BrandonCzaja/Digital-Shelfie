@@ -8,19 +8,19 @@ const User = require("../../models/auth");
 ///////////////////////////////////////
 // CREATE ROUTER
 ///////////////////////////////////////
-const auth = Router();
+const router = Router();
 
 ///////////////////////////////////////
 // ROUTES
 ///////////////////////////////////////
 
 // SIGNUP PAGE '3000/auth/signup'
-auth.get("/signup", (req, res) => {
+router.get("/signup", (req, res) => {
 	res.render("auth/signup.jsx");
 });
 
 // CREATE NEW USER POST REQUEST
-auth.post("/signup", async (req, res) => {
+router.post("/signup", async (req, res) => {
 	// ENCRYPT THE PASSWORD
 	req.body.password = await bcrypt.hash(req.body.password, 10);
 	// SAVE NEW USER IN DB
@@ -30,12 +30,12 @@ auth.post("/signup", async (req, res) => {
 });
 
 // LOGIN PAGE '3000/auth/login'
-auth.get("/login", (req, res) => {
+router.get("/login", (req, res) => {
 	res.render("auth/login.jsx");
 });
 
 // LOGIN POST REQUEST
-auth.post("/login", async (req, res) => {
+router.post("/login", async (req, res) => {
 	// FIND USER
 	const user = await User.find({ username: req.body.username });
 	//CHECK IF USER WAS FOUND
@@ -58,7 +58,7 @@ auth.post("/login", async (req, res) => {
 });
 
 //LOGOUT
-auth.get("/logout", (req, res) => {
+router.get("/logout", (req, res) => {
 	req.session.destroy();
 	res.redirect("/auth/login");
 });
@@ -66,4 +66,4 @@ auth.get("/logout", (req, res) => {
 ///////////////////////////////////////
 // Export auth
 ///////////////////////////////////////
-module.exports = auth;
+module.exports = router;
