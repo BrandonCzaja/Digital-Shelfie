@@ -22,9 +22,9 @@ class Layout extends React.Component {
 								<span>
 									<a href="/auth/logout"> Logout |</a>
 								</span>
-								<span>
+								{/* <span>
 									<a href="/collection"> Home |</a>
-								</span>
+								</span> */}
 							</h2>
 						</nav>
 					</header>
