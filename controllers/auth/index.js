@@ -14,7 +14,7 @@ const router = Router();
 // ROUTES
 ///////////////////////////////////////
 
-// SIGNUP PAGE
+// SIGNUP PAGE '3000/auth/signup'
 router.get("/signup", (req, res) => {
 	res.render("auth/signup.jsx");
 });
@@ -29,7 +29,7 @@ router.post("/signup", async (req, res) => {
 	res.redirect("/auth/login");
 });
 
-// LOGIN PAGE
+// LOGIN PAGE '3000/auth/login'
 router.get("/login", (req, res) => {
 	res.render("auth/login.jsx");
 });

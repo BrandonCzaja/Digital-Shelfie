@@ -9,7 +9,7 @@ class Index extends React.Component {
 		return (
 			<Layout title="My Collection">
 				<span>
-					<h1> Your Games </h1>
+					<h1> Your Games   </h1>
 				</span>
 				<a href="/collection/new">
 					<button> New Game</button>

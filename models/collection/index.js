@@ -8,7 +8,7 @@ const { Schema, model } = require("mongoose");
 ////////////////////////////////////
 
 const collectionSchema = new Schema({
-  username: { type: String, required: true},
+  username: { type: String, required: true, unique: true},
   game: {type:String, required:false},
   imageURL: {type:String, required:false},
 },

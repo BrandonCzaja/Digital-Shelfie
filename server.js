@@ -19,7 +19,7 @@ const mongoose = require("./db/dbconn");
 // ROUTERS
 const authRouter = require("./controllers/auth");
 const testRouter = require("./controllers/test");
-const collectionRouter = require("./controllers/collection/index");
+const collectionRouter = require("./controllers/collection");
 
 // OTHER IMPORTS
 const session = require("express-session");
@@ -56,12 +56,15 @@ app.use(morgan("tiny")); //logging
 ///////////////
 //Routes and Routers
 //////////////
-app.get("/", (req, res) => {
-	res.render("Landing.jsx", { hello: "Hello User, please login" });
-});
 
+// This doesn't actually do anything
+// app.get("/", (req, res) => {
+// 	res.render("auth/login.jsx");
+// });
+
+// Must have for auth to work
 app.use("/auth", authRouter);
-app.use("/test", testRouter);
+// Required for collection routes
 app.use("/collection", collectionRouter);
 
 ////////////////////////

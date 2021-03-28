@@ -14,7 +14,11 @@ const router = Router();
 // ROUTES
 ///////////////////////////////////////
 
-// Index Route
+// 3000/collection
+// router.get('/', (req, res) => {
+// 	res.render('auth/login.jsx')
+// })
+// Index Route '3000/collection' - when user logged in it shows their games
 router.get("/", auth, async (req, res) => {
 	try {
 		const games = await Collection.find({ username: req.session.username });
