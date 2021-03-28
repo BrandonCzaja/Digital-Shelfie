@@ -61,7 +61,7 @@ app.use(morgan("tiny")); //logging
 // This is my default root route
 app.get("/", (req, res) => {
 	// console.log('Hello Cheese')
-	res.render('auth/login.jsx')
+	res.render('landing.jsx')
 });
 
 // Must have for auth to work

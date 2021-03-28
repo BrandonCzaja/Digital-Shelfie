@@ -1,5 +1,5 @@
 const React = require('react')
-const Layout = require('./Layout.jsx')
+const Layout = require('./layout.jsx')
 
 class Landing extends React.Component{
 	render() {
