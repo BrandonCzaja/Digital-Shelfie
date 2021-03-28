@@ -57,11 +57,11 @@ app.use(morgan("tiny")); //logging
 //Routes and Routers
 //////////////
 
-// If I change the route it works, so something is blocking the '/' route
-// This doesn't actually do anything
+// This now works. It will render whatever page I tell it to.
+// This is my default root route
 app.get("/", (req, res) => {
-	console.log('Hello World')
-	res.send('Hello World')
+	console.log('Hello Cheese')
+	res.render('auth/signup.jsx')
 });
 
 // Must have for auth to work
