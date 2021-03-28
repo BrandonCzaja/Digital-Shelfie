@@ -1,5 +1,5 @@
-import React from "react";
-import Layout from "./Layout.jsx";
+const React = require('react')
+const Layout = require('./Layout.jsx')
 
 const Landing = (props) => {
 	const greeting = props.hello;
@@ -10,8 +10,7 @@ const Landing = (props) => {
 	);
 };
 
-export default Landing;
-
+module.exports = Landing
 /*
 Notes:
 This page is the landing page

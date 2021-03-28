@@ -77,9 +77,9 @@ router.put("/edit/:id", auth, async (req, res) => {
 
 //TEST ROUTE TO SHOW HOW AUTH MIDDLEWARE WORKS
 
-router.get("/", auth, (req, res) => {
-	res.send("if you see this you are logged in");
-});
+// router.get("/", auth, (req, res) => {
+// 	res.send("if you see this you are logged in");
+// });
 
 ///////////////////////////////////////
 // Export Router

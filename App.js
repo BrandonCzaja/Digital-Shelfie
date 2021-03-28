@@ -1,18 +1,20 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Index from "./views/collection/Index.jsx";
-import Landing from "./views/Landing.jsx";
-import Layout from "./views/Layout.jsx";
-import API from "./views/collection/API.jsx";
+const React = require('react')
 
-const App = (props, handleChange) => {
+const Index = require('./views/collection/Index.jsx')
+
+
+const App = () => {
 	return (
-		<Router>
-			<Route path="/collection/new" component={API} />
-			<Route path="/" exact component={Landing} />
-			<Route path="/collection" exact component={Index} />
-		</Router>
+		<div className='App'>
+			<Index/>
+			<Landing/>
+			<Router>
+				<Route path="/collection/new" component={API} />
+				<Route path="/" exact component={<Landing/>} />
+				<Route path="/collection" exact component={Index} />
+			</Router>
+		</div>
 	);
 };
 
-export default App;
+module.exports = App
