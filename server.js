@@ -59,8 +59,7 @@ const authRouter = require("./controllers/auth");
 const collectionRouter = require("./controllers/collection");
 
 
-// This now works. It will render whatever page I tell it to.
-// This is my default root route. Doesn't render landing page outside of local
+// Leave this at auth/login, otherwise heroku doesn't like it
 app.get("/", (req, res) => {
 	// console.log('Hello Cheese')
 	res.render('auth/login')
