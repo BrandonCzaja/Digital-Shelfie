@@ -60,7 +60,7 @@ app.use(morgan("tiny")); //logging
 // This now works. It will render whatever page I tell it to.
 // This is my default root route
 app.get("/", (req, res) => {
-	console.log('Hello Cheese')
+	// console.log('Hello Cheese')
 	res.render('auth/signup.jsx')
 });
 

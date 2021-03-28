@@ -8,7 +8,7 @@ const Collection = require("../../models/collection");
 ///////////////////////////////////////
 // CREATE ROUTER
 ///////////////////////////////////////
-const collection = Router();
+const router = Router();
 
 ///////////////////////////////////////
 // ROUTES
@@ -19,18 +19,19 @@ const collection = Router();
 // 	res.render('auth/login.jsx')
 // })
 // Index Route '3000/collection' - when user logged in it shows their games
-collection.get("/", auth, async (req, res) => {
+router.get("/", auth, async (req, res) => {
 	try {
 		console.log('Hello from collection')
 		const games = await Collection.find({ username: req.session.username });
 		res.render("collection/Index.jsx", { games });
 	} catch (err) {
+		console.log('Hello from collection error')
 		console.log(err);
 	}
 });
 
 // New Route
-collection.get("/new", auth, (req, res) => {
+router.get("/new", auth, (req, res) => {
 	try {
 		res.render("collection/New.jsx");
 	} catch (error) {
@@ -39,7 +40,7 @@ collection.get("/new", auth, (req, res) => {
 });
 
 //Create
-collection.post("/", auth, async (req, res) => {
+router.post("/", auth, async (req, res) => {
 	try {
 		req.body.username = req.session.username;
 		const newGame = await Collection.create(req.body);
@@ -50,7 +51,7 @@ collection.post("/", auth, async (req, res) => {
 });
 
 //Delete
-collection.delete("/:id", auth, async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
 	try {
 		await Collection.findByIdAndDelete(req.params.id);
 		res.redirect("/collection");
@@ -60,7 +61,7 @@ collection.delete("/:id", auth, async (req, res) => {
 });
 
 //Edit
-collection.get("/edit/:id", auth, async (req, res) => {
+router.get("/edit/:id", auth, async (req, res) => {
 	try {
 		const game = await Collection.findById(req.params.id);
 		res.render("collection/edit.jsx", { game });
@@ -70,7 +71,7 @@ collection.get("/edit/:id", auth, async (req, res) => {
 });
 
 //Update
-collection.put("/edit/:id", auth, async (req, res) => {
+router.put("/edit/:id", auth, async (req, res) => {
 	try {
 		req.body.username = req.session.username;
 		await Collection.findByIdAndUpdate(req.params.id, req.body);
@@ -89,4 +90,4 @@ collection.put("/edit/:id", auth, async (req, res) => {
 ///////////////////////////////////////
 // Export collection
 ///////////////////////////////////////
-module.exports = collection;
+module.exports = router;
