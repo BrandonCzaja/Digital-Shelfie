@@ -1,7 +1,6 @@
 ///////////////////////////
 // Environmental Variables
 ///////////////////////////
-// REMEMBER TO CREATE .env file
 require("dotenv").config();
 const { PORT, SECRET } = process.env;
 
@@ -9,7 +8,7 @@ const { PORT, SECRET } = process.env;
 // Dependencies
 //////////////////////////
 
-// Bringing in Express
+// Bringing in Express - This is the correct way, don't use import
 const express = require("express");
 const app = express();
 
@@ -59,17 +58,22 @@ const authRouter = require("./controllers/auth");
 const collectionRouter = require("./controllers/collection");
 
 
-// Leave this at auth/login, otherwise heroku doesn't like it
-app.get("/", (req, res) => {
-	// console.log('Hello Cheese')
-	res.render('auth/login')
-});
-
 // Must have for auth to work
 app.use("/auth", authRouter);
 // Required for collection routes
 app.use("/collection", collectionRouter);
 
+
+// Leave this at auth/login, otherwise heroku doesn't like it
+// This isn't working on local host
+app.get("/", (req, res) => {
+	// console.log('Hello Cheese')
+	res.render('auth/login.jsx')
+});
+
+app.get('/hello', (req, res) => {
+	res.send('Hello')
+})
 ////////////////////////
 //APP LISTENER
 ////////////////////////

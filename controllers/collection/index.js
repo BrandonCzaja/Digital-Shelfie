@@ -14,11 +14,7 @@ const router = Router();
 // ROUTES
 ///////////////////////////////////////
 
-// 3000/collection
-// router.get('/', (req, res) => {
-// 	res.render('auth/login.jsx')
-// })
-// Index Route '3000/collection' - when user logged in it shows their games
+// Index: Leave as is => 3000/collection
 router.get("/", auth, async (req, res) => {
 	try {
 		console.log('Hello from collection')
@@ -30,7 +26,7 @@ router.get("/", auth, async (req, res) => {
 	}
 });
 
-// New Route
+// New: 
 router.get("/new", auth, (req, res) => {
 	try {
 		res.render("collection/New.jsx");
