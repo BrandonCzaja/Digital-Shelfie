@@ -71,9 +71,6 @@ app.get("/", (req, res) => {
 	res.render('auth/login.jsx')
 });
 
-app.get('/hello', (req, res) => {
-	res.send('Hello')
-})
 ////////////////////////
 //APP LISTENER
 ////////////////////////

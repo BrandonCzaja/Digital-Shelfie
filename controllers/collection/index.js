@@ -19,7 +19,7 @@ router.get("/", auth, async (req, res) => {
 	try {
 		console.log('Hello from collection')
 		const games = await Collection.find({ username: req.session.username });
-		res.render("collection/Index.jsx", { games });
+		res.render("collection/index.jsx", { games });
 	} catch (err) {
 		console.log('Hello from collection error')
 		console.log(err);
@@ -77,11 +77,6 @@ router.put("/edit/:id", auth, async (req, res) => {
 	}
 });
 
-//TEST ROUTE TO SHOW HOW AUTH MIDDLEWARE WORKS
-
-// collection.get("/", auth, (req, res) => {
-// 	res.send("if you see this you are logged in");
-// });
 
 ///////////////////////////////////////
 // Export collection
