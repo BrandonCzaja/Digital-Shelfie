@@ -18,6 +18,7 @@ const router = Router();
 router.get("/", auth, async (req, res) => {
 	try {
 		console.log('Hello from collection')
+		console.log(req.session.username)
 		const games = await Collection.find({ username: req.session.username });
 		res.render("collection/index.jsx", { games });
 	} catch (err) {

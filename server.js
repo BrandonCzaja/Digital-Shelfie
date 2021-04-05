@@ -67,7 +67,8 @@ app.use("/collection", collectionRouter);
 // Leave this at auth/login, otherwise heroku doesn't like it
 // This isn't working on local host
 app.get("/", (req, res) => {
-	// console.log('Hello Cheese')
+	console.log(req.session)
+	console.log(req.session.username)
 	res.render('index', {greeting: 'Welcome to Digital Shelfie. Please login.'})
 });
 

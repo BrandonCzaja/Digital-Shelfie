@@ -11,7 +11,6 @@ class Layout extends React.Component {
 				<body>
 					<header>
 						<h1>Digital Shelfie</h1>
-						{/* Check to see if the user is logged in with sessions and use a ternary operator to render the auth */}
 						<nav>
 							<h2>
 								<span>
@@ -23,9 +22,7 @@ class Layout extends React.Component {
 								<span>
 									<a href="/auth/logout"> Logout |</a>
 								</span>
-								{/* <span>
-									<a href="/collection"> Home |</a>
-								</span> */}
+
 							</h2>
 						</nav>
 					</header>
