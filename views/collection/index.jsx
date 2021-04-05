@@ -15,7 +15,7 @@ class Index extends React.Component {
 					<button> New Game</button>
 				</a>
 				<div className="row">
-					{games.map((game) => (
+					{games.map((game, index) => (
 						<div className="container">
 							<h2 key={index}>{game.game}</h2>
 							<img className="gameImages" src={game.imageURL} />

@@ -2,7 +2,7 @@ const React = require('react')
 
 class Layout extends React.Component {
 	render() {
-		return (
+		return ( 
 			<html>
 				<head>
 					<title>{this.props.title}</title>
