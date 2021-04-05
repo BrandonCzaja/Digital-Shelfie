@@ -5,7 +5,7 @@ class Landing extends React.Component{
 	render() {
 		return (
 			<Layout title='Digital Shelfie'>
-				<h1 className='indexHeader'>Hello User. Please sign up or login.</h1>
+				<h1 className='indexHeader'>{this.props.greeting}</h1>
 			</Layout>
 		)
 	}
