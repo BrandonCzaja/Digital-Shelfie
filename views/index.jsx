@@ -1,7 +1,7 @@
 const React = require('react')
 const Layout = require('./layout.jsx')
 
-class Landing extends React.Component{
+class Index extends React.Component{
 	render() {
 		return (
 			<Layout title='Digital Shelfie'>
@@ -11,7 +11,7 @@ class Landing extends React.Component{
 	}
 }
 
-module.exports = Landing
+module.exports = Index
 
 
 

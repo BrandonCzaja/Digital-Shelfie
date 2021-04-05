@@ -68,7 +68,7 @@ app.use("/collection", collectionRouter);
 // This isn't working on local host
 app.get("/", (req, res) => {
 	// console.log('Hello Cheese')
-	res.render('index.jsx', {greeting: 'Welcome to Digital Shelfie. Please login.'})
+	res.render('index', {greeting: 'Welcome to Digital Shelfie. Please login.'})
 });
 
 ////////////////////////
