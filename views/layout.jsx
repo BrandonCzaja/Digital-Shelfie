@@ -10,17 +10,17 @@ class Layout extends React.Component {
 				</head>
 				<body>
 					<header>
-						{/* <nav>{this.props.nav}</nav> */}
 						<nav>
 							<h2>
 								<span>
-									<a href="/auth/register">| Register |</a>
+									<a href="/auth/register">
+										Register |</a>
 								</span>
 								<span>
 									<a href="/auth/login"> Login |</a>
 								</span>
 								<span>
-									<a href="/auth/logout"> Logout |</a>
+									<a href="/auth/logout"> Logout</a>
 								</span>
 
 							</h2>

@@ -6,7 +6,6 @@ const Layout = require("../Layout.jsx");
 class Index extends React.Component {
 	render() {
 		const { games, index } = this.props;
-		const { user } = this.props
 		return (
 			<Layout title="My Collection">
 				<a href="/collection/new">
