@@ -10,11 +10,11 @@ class Layout extends React.Component {
 				</head>
 				<body>
 					<header>
-						<h1>Digital Shelfie</h1>
+						{/* <nav>{this.props.nav}</nav> */}
 						<nav>
 							<h2>
 								<span>
-									<a href="/auth/signup">| Sign Up |</a>
+									<a href="/auth/register">| Register |</a>
 								</span>
 								<span>
 									<a href="/auth/login"> Login |</a>

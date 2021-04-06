@@ -15,7 +15,7 @@ const router = Router();
 ///////////////////////////////////////
 
 // SIGNUP PAGE '3000/signup'
-router.get("/signup", (req, res) => {
+router.get("/register", (req, res) => {
 	res.render("auth/signup.jsx");
 });
 
@@ -38,6 +38,8 @@ router.get("/login", (req, res) => {
 router.post("/login", async (req, res) => {
 	// FIND USER
 	const user = await User.find({ username: req.body.username });
+	console.log(`Login: ${user}`)
+	req.session.isUserLoggedIn = user
 	//CHECK IF USER WAS FOUND
 	if (user.length > 0) {
 		// COMPARE PASSWORD
@@ -63,7 +65,6 @@ router.post("/login", async (req, res) => {
 router.get("/logout", (req, res) => {
 	console.log(req.session.username)
 	req.session.destroy();
-	// res.redirect("/auth/login");
 	res.redirect('/')
 });
 
