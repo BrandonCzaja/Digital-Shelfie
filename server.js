@@ -21,17 +21,11 @@ const MongoStore = require("connect-mongo")(session);
 const methodOverride = require("method-override");
 const morgan = require("morgan");
 
-///////////////////////////////
-// Set View Engine
-///////////////////////////////
-
 //set view engine to express-react-views
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 
-////////////
-//MIDDLEWARE
-////////////
+
 // SESSIONS, this allows you to use req.session for tracking session data
 app.use(
 	session({

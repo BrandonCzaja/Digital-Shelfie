@@ -10,6 +10,7 @@ class Layout extends React.Component {
 				</head>
 				<body>
 					<header>
+						<h1>Digital Shelfie</h1>
 						<nav>
 							<h2>
 								<span>
