@@ -61,26 +61,19 @@ app.use("/collection", collectionRouter);
 // Leave this at auth/login, otherwise heroku doesn't like it
 // This isn't working on local host
 app.get("/", (req, res) => {
-	const {isUserLoggedIn} = req.session
-	console.log(req.session)
-	console.log(req.session.username)
-	res.render('index', {greeting: 'Welcome to Digital Shelfie. Please login.'})
+	// const {isUserLoggedIn} = req.session
+	// console.log(req.session)
+	// console.log(req.session.username)
+	// res.render('index', {greeting: 'Welcome to Digital Shelfie. Please login.'})
 
-	// res.send(`
-	// <h1>Welcome to Digital Shelfie!</h1>
-	// ${isUserLoggedIn ? `<span>
-	// 			<a href="/auth/logout"> Logout </a>
-	// 		</span>}
-	// 		<span>
-	// 			<a href="/collection"> Home |</a>
-	// 		</span> 
-	// 		` : `								<span>
-	// 		<a href="/auth/signup">| Sign Up |</a>
-	// 	</span>
-	// 	<span>
-	// 		<a href="/auth/login"> Login |</a>
-	// 	</span>`}							`)
+
+	// Testing to make sure server works once deployed
+	res.send('Hello World')
+
 });
+
+
+
 
 ////////////////////////
 //APP LISTENER
