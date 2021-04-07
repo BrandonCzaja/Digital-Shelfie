@@ -29,7 +29,7 @@ router.get("/", auth, async (req, res) => {
 });
 
 // New: 
-router.get("/new", auth, (req, res) => {
+router.get("/collection/new", auth, (req, res) => {
 	try {
 		res.render("collection/New.jsx");
 	} catch (error) {
