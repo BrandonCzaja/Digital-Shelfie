@@ -14,8 +14,8 @@ const router = Router();
 // ROUTES
 ///////////////////////////////////////
 
-// Index: Leave as is => 3000/collection
-router.get("/", auth, async (req, res) => {
+// Index:
+router.get("/collection", auth, async (req, res) => {
 	try {
 		console.log('Hello from collection')
 		console.log(req.session.username)

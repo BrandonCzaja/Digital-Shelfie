@@ -64,11 +64,11 @@ app.get("/", (req, res) => {
 	// const {isUserLoggedIn} = req.session
 	// console.log(req.session)
 	// console.log(req.session.username)
-	// res.render('index', {greeting: 'Welcome to Digital Shelfie. Please login.'})
+	res.render('index', {greeting: 'Welcome to Digital Shelfie. Please login.'})
 
 
 	// Testing to make sure server works once deployed
-	res.send('Hello World')
+	// res.send('Hello World')
 
 });
 
@@ -78,9 +78,6 @@ app.get("/", (req, res) => {
 ////////////////////////
 //APP LISTENER
 ////////////////////////
-// app.listen(PORT, () => {
-// 	console.log(`Your are listening on port ${PORT}`);
-// });
 app.listen(process.env.PORT, () => {
 	console.log(`Your are listening on ${process.env.PORT} `);
 });
