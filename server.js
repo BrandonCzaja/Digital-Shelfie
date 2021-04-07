@@ -2,7 +2,7 @@
 // Environmental Variables
 ///////////////////////////
 require("dotenv").config();
-const { PORT, SECRET } = process.env;
+const { SECRET } = process.env;
 
 ///////////////////////////
 // Dependencies
@@ -13,7 +13,7 @@ const express = require("express");
 const app = express();
 
 // IMPORT DATABASE CONNECTIONS
-const mongoose = require("./db/dbconn");
+const mongoose = require("./db/dbconn.js");
 
 // OTHER IMPORTS
 const session = require("express-session");
@@ -81,6 +81,6 @@ app.get("/", (req, res) => {
 // app.listen(PORT, () => {
 // 	console.log(`Your are listening on port ${PORT}`);
 // });
-app.listen(3000, () => {
-	console.log('Your are listening on 3000 ');
+app.listen(process.env.PORT, () => {
+	console.log(`Your are listening on ${process.env.PORT} `);
 });
