@@ -1,7 +1,7 @@
 // This is the user homepage that shows their collection
 
 const React = require("react");
-const Layout = require("../Layout.jsx");
+const Layout = require("../layout.jsx");
 
 class Index extends React.Component {
 	render() {
