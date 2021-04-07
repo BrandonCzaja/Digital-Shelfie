@@ -15,7 +15,7 @@ const router = Router();
 ///////////////////////////////////////
 
 // Index:
-router.get("/collection", auth, async (req, res) => {
+router.get("/", auth, async (req, res) => {
 	try {
 		console.log('Hello from collection')
 		console.log(req.session.username)
