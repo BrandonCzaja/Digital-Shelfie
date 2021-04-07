@@ -31,7 +31,7 @@ router.get("/", auth, async (req, res) => {
 // New: 
 router.get("/collection/new", auth, (req, res) => {
 	try {
-		res.render("collection/New.jsx");
+		res.render("collection/new.jsx");
 	} catch (error) {
 		console.log(error);
 	}
