@@ -16,10 +16,10 @@ class New extends React.Component {
             <input type="submit" value='Add Game'/>
         </form>
 
-        <h1>Search Games</h1>
+        {/* <h1>Search Games</h1>
         <form>
           <input/>
-        </form>
+        </form> */}
       </Layout>
     );
   }
