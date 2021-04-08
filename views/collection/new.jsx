@@ -1,6 +1,9 @@
 const React = require("react");
 const Layout = require("../layout.jsx");
 
+// Need to get api call
+
+
 class New extends React.Component {
   render() {
     const {games} = this.props;
