@@ -24,7 +24,12 @@ const fetch = require('node-fetch')
         try {
           const response = await fetch(url);
           const json = await response.json();
-          console.log(json.games[0].price);
+          console.log(json.games[0].name);
+          console.log(json.games[0].min_players);
+          console.log(json.games[0].max_players);
+          console.log(json.games[0].official_url);
+          console.log(json.games[0].average_user_rating);
+
         } catch (error) {
           console.log(error);
         }
